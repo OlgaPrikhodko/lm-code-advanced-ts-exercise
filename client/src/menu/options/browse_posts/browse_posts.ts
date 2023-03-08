@@ -4,17 +4,20 @@ import { clear, print, prompt, printNewLine } from "../../../ui/console";
 export async function browsePosts() {
 	clear("nope");
 
-	const desiredPostId = await prompt("Enter Post ID");
-
-	// TODO: should we validate this?!
+	const desiredPostIdStr = await prompt("Enter Post ID");
+	const desiredPostId = +desiredPostIdStr;
 
 	print(`📨 Fetching post "${desiredPostId}...`);
 
-	const result = await fetchPost(desiredPostId);
+	if (typeof desiredPostId === "number") {
+		const result = await fetchPost(desiredPostId);
 
-	print(`🥳 Received post:`);
+		print(`🥳 Received post:`);
 
-	console.log(result);
+		console.log(result);
+	} else {
+		await prompt("⌨️ Please enter correct value for Post Id 🕶️");
+
 
 	printNewLine();
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
