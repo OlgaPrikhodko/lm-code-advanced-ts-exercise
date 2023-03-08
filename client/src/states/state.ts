@@ -1,13 +1,15 @@
 import { states } from "./states";
 
+type States = keyof typeof states;
+
 export class State {
-	#state = states.MENU;
+	#state: States = states.MENU;
 
 	get() {
 		return this.#state;
 	}
 
-	set(newState) {
+	set(newState: States) {
 		this.#state = newState;
 	}
 }
