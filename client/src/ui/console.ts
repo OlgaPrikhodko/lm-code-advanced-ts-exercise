@@ -12,7 +12,7 @@ export function print(str: string, newLine = true) {
 	}
 }
 
-export function clear(addTopBorder: "yes" | undefined) {
+export function clear(addTopBorder?: "yes" | "nope") {
 	console.clear();
 	if (addTopBorder === "yes") {
 		print("------------------------------------");

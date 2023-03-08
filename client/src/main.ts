@@ -9,7 +9,7 @@ import { states } from "./states/states";
 import { clear, print, printNewLine, prompt } from "./ui/console";
 
 async function begin() {
-	clear(true);
+	clear("yes");
 	print("👋 Welcome to our cool blog browser!");
 	await prompt("⌨️ Press [ENTER] to continue! 🕶️");
 	main();
