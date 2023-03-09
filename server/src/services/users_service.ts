@@ -26,3 +26,16 @@ export function getAllUsers(): User[] {
 		},
 	];
 }
+
+export function addUser(userName: string) {
+	const allUsers = getAllUsers();
+	const newUser: User = {
+		id: `${allUsers.length + 1}`,
+		name: userName,
+		creationDate: new Date(),
+	};
+
+	allUsers.push(newUser);
+
+	return newUser;
+}
