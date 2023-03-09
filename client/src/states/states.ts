@@ -11,4 +11,5 @@ export const states = {
 
 	UNKNOWN: "UNKNOWN",
 	CABBAGE: "CABBAGE",
+	ADD_POST: "ADD_POST",
 } as const;
