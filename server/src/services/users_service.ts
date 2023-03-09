@@ -37,5 +37,5 @@ export function addUser(userName: string) {
 
 	allUsers.push(newUser);
 
-	return newUser;
+	return allUsers;
 }

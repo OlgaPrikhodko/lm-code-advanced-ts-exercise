@@ -10,11 +10,13 @@ export async function addUser() {
 	printNewLine();
 	print(`📨 Adding user "${userName}"...`);
 
-	const success = await sendUserToServer(userName);
+	const allUsers = await sendUserToServer(userName);
 
-	if (success === true)
+	if (allUsers.length > 0) {
 		print(`🥳 User with name "${userName}" was added successfully`);
-	else print("😵 User was not added.");
+		print(`🥳 Full list of users: `);
+		console.log(allUsers);
+	} else print("😵 User was not added.");
 
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
 

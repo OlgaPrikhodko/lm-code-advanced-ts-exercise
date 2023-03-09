@@ -11,9 +11,9 @@ export async function sendUserToServer(userName: string) {
 		});
 
 		const json = await result.json();
-		const { success } = json;
+		const { allUsers } = json;
 
-		return success;
+		return allUsers;
 	} catch (e) {
 		console.error(e);
 

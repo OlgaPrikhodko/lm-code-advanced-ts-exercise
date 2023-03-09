@@ -47,7 +47,7 @@ async function main() {
 			case "ADD_USER":
 				clear();
 
-				const user = await addUser();
+				const newUsers = await addUser();
 				state.set(states.MENU);
 				break;
 			case "UNKNOWN":
