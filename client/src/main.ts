@@ -1,5 +1,6 @@
 import { exit } from "./exit/exit";
 import { showMenu } from "./menu/menu";
+import { addPost } from "./menu/options/add_post/add_post";
 import { addUser } from "./menu/options/add_user/add_user";
 import { browsePosts } from "./menu/options/browse_posts/browse_posts";
 import { sendMessage } from "./menu/options/send_message/send_message";
@@ -50,6 +51,10 @@ async function main() {
 				const newUsers = await addUser();
 				state.set(states.MENU);
 				break;
+			case states.ADD_POST:
+				clear();
+				const newPost = await addPost();
+				state.set(states.MENU);
 			case "UNKNOWN":
 				clear();
 				print("😵 We have entered an unknown state.");
