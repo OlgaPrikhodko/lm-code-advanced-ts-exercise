@@ -15,12 +15,11 @@ export async function browsePosts() {
 		print(`🥳 Received post:`);
 
 		console.log(result);
+
+		return result;
 	} else {
 		await prompt("⌨️ Please enter correct value for Post Id 🕶️");
-
-
+	}
 	printNewLine();
 	await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
-
-	return result;
 }
