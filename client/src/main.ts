@@ -46,9 +46,8 @@ async function main() {
 				break;
 			case "ADD_USER":
 				clear();
-				// print("🏗️  This functionality has not been implemented!");
-				// await prompt("⌨️ Press [ENTER] to return to the main menu! 🕶️");
-				const userState = await addUser();
+
+				const user = await addUser();
 				state.set(states.MENU);
 				break;
 			case "UNKNOWN":
